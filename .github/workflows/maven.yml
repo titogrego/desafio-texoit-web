@@ -21,7 +21,7 @@ jobs:
         cache: maven
       
     - name: Test Execution
-      run: mvn clean test
+      run: mvn clean test -Dheadless=true
         
     - name: Test Report Generation
       uses: actions/upload-artifact@v4
