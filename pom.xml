@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>net.com.texoit.automacao-web</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Archetype - net.com.texoit.automacao-web</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <aspectj.version>1.8.11</aspectj.version>
+    <evidence>false</evidence>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <dependency>
+      <artifactId>cucumber-java</artifactId>
+      <groupId>io.cucumber</groupId>
+      <version>4.8.1</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>cucumber-junit</artifactId>
+      <groupId>io.cucumber</groupId>
+      <version>4.8.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <artifactId>selenium-java</artifactId>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <version>3.141.59</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>2.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-server</artifactId>
+      <version>3.12.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.8.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>extentreports-cucumber4-adapter</artifactId>
+      <groupId>com.aventstack</groupId>
+      <version>1.2.1</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>cucumber-java</artifactId>
+          <groupId>io.cucumber</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>cucumber-core</artifactId>
+          <groupId>io.cucumber</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <source>1.8</source>
+          <target>1.8</target>
+
+        </configuration>
+      </plugin>
+
+      <!-- These are the Allure Reporting plugins -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <argLine>-Dfile.encoding=UTF-8</argLine>
+          <includes>
+            <include>**/**/RunnerTest.java</include>
+          </includes>
+
+
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

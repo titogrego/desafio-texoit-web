@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <!-- standard, dark -->
+        <documentTitle>Teste automatizado TEXOit</documentTitle>
+
+        <!-- document encoding -->
+        <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+
+        <!-- protocol for script and stylesheets -->
+        <!-- defaults to https -->
+        <protocol>http</protocol>
+
+        <!-- title of the document -->
+        <reportName>
+            <![CDATA[
+               <img class='img' src='https://d33wubrfki0l68.cloudfront.net/c0058fb67e00f9fccf6289f1a59289e0ac5cb667/a3bdc/logo_texosite.df1d3477.svg'
+                style = "width: 116px;
+                    height: 37px;
+                    float: left;
+                    position: absolute;
+                    margin-left: -40%;
+                    margin-top: -3%;
+                "/>
+               <span>Relat&oacute;rio de execu&ccedil;&atilde;o dos testes</span>
+            ]]>
+
+        </reportName>
+
+        <!-- report name - displayed at top-nav -->
+        <scripts>
+
+        </scripts>
+
+        <!-- timestamp format -->
+        <styles>
+            <![CDATA[
+
+            ]]>
+        </styles>
+
+        <!-- custom javascript -->
+        <theme>dark</theme>
+
+        <!-- custom styles -->
+        <timeStampFormat>dd MMM, yyyy HH:mm:ss</timeStampFormat>
+    </configuration>
+</extentreports>
